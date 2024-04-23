@@ -7,6 +7,7 @@
     console.log(`DB Connected`)
 })();
 
-((name) => {
-    console.log(`Db Connected Two ${name}`)
-})('Aditya')
+// when we have to use two iife then we have to add semicolon
+    ((name) => {
+        console.log(`Db Connected Two ${name}`)
+    })('Aditya')
