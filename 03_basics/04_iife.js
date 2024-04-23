@@ -8,6 +8,9 @@
 })();
 
 // when we have to use two iife then we have to add semicolon
-    ((name) => {
-        console.log(`Db Connected Two ${name}`)
-    })('Aditya')
+
+
+// Below is Parameter iife
+((name) => {
+    console.log(`Db Connected Two ${name}`)
+})('Aditya')
