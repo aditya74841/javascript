@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body class="">
+    <h1>Aditya Ranjan</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        const sayAditya = function () {
+            console.log("Aditya Ranjan");
+        }
+
+        const changeText = function () {
+            document.querySelector('h1').innerHTML = "Shubham Pandey"
+        }
+
+        // let intervalId = "";
+
+        // document.querySelector('#start').addEventListener('click', function () {
+        //     intervalId = setInterval(sayAditya, 1000);
+        //     console.log("STARTED");
+        // });
+
+        // document.querySelector('#stop').addEventListener('click', function () {
+        //     clearInterval(intervalId)
+        //     console.log("STOPPED");
+        // });
+
+        const randomColor = () => {
+            const hex = "0123456789ABCDEF";
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += hex.charAt(Math.floor(Math.random() * 16));
+            }
+            return color;
+        }
+
+        let intervalId
+
+        const startChangingColor = function () {
+            // console.log("Check from setInterval");
+
+            if (!intervalId) {
+                intervalId = setInterval(() => {
+                    document.body.style.backgroundColor = randomColor();
+
+                }, 1000)
+            }
+
+
+        };
+
+        const stopChangingColor = function () {
+            // console.log("Check from clear interval");
+            clearInterval(intervalId)
+            intervalId = null;
+        };
+
+        document.querySelector("#start").addEventListener("click", startChangingColor);
+        document.querySelector("#stop").addEventListener("click", stopChangingColor);
+    </script>
+</body>
+
+</html>
